@@ -1,7 +1,7 @@
-const host = ''
+const host = 'https://httpbin.org'
 
 const api = {
-  index: host + ''
+  post: host + '/post'
 }
 
 module.exports = api

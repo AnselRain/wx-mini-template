@@ -18,14 +18,15 @@ Page({
     console.log(await api.getSystemInfo())
   },
   async getList () {
-    const request = await http(api.index, {
+    const params = {
       showLoading: true,
+      method: 'POST',
       data: {
-        aaa: '123'
       }
-    })
+    }
+    const request = http(api.post, params)
     console.log(request)
-    const data = await request.data
+    const data = request.data
     console.log(data)
   }
 })
