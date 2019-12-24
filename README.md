@@ -3,7 +3,7 @@
  * @Author: ALAN
  * @Github: https://github.com/AnselRain
  * @Date: 2019-12-11 17:23:00
- * @LastEditTime : 2019-12-24 18:32:36
+ * @LastEditTime : 2019-12-24 18:34:10
  * @LastEditors  : ALAN
  -->
 # wx-mini-template
@@ -33,10 +33,10 @@ http(url, params)
 ```
 
 
-| 参数名 | 参数类型 | 参数值 |  
-| --- | --- | --- | 
-| url | string |  |  
-| params | object |  |  
+| 参数名 | 参数类型 | 参数值 |
+| --- | --- | --- |
+| url | string |  |
+| params | object |  |
 
 
 > params
