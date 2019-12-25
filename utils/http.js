@@ -1,12 +1,11 @@
 const http = async (url, params = {}) => {
-  Object.assign(params, {
-    token: wx.getStorageSync('token')
-  })
   // 所有的请求，header默认携带token
   const header = params.header || {
-    'Content-Type': 'application/json',
-    token: params.token || ''
+    'Content-Type': 'application/json'
   }
+  Object.assign(header, {
+    token: wx.getStorageSync('token') || ''
+  })
   const data = params.data || {}
   const method = params.method || 'POST'
   const showLoading = params.showLoading || false

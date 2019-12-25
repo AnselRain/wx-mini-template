@@ -21,6 +21,9 @@ Page({
     const params = {
       showLoading: true,
       method: 'POST',
+      header: {
+        aaa: 'adsf'
+      },
       data: {
       }
     }
