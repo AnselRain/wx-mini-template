@@ -3,7 +3,7 @@
  * @Author: ALAN
  * @Github: https://github.com/AnselRain
  * @Date: 2019-12-11 17:23:00
- * @LastEditTime : 2019-12-24 18:34:10
+ * @LastEditTime : 2019-12-25 16:13:12
  * @LastEditors  : ALAN
  -->
 # wx-mini-template
@@ -15,7 +15,7 @@
 > `token`请存入本地缓存中，`key`值为`token`
 
 ``` js
-    wx.getStorageSync('token')
+    wx.setStorageSync('token', token)
 ```
 
 ### request请求

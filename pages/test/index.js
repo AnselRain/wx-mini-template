@@ -8,15 +8,6 @@ Page({
   },
   onLoad: function () {
   },
-  async testAsync () {
-    return 'hello async'
-  },
-  async aaa () {
-    console.log(12)
-    const result = await this.testAsync()
-    console.log(result)
-    console.log(await api.getSystemInfo())
-  },
   async getList () {
     const params = {
       showLoading: true,
@@ -27,9 +18,10 @@ Page({
       data: {
       }
     }
-    const request = http(api.post, params)
+    const request = await http(api.post, params)
     console.log(request)
     const data = request.data
+    await wx.setStorageSync('aaa', '0980980')
     console.log(data)
   }
 })

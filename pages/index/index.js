@@ -9,26 +9,5 @@ Page({
   data: {
   },
   onLoad: function () {
-  },
-  async testAsync () {
-    return 'hello async'
-  },
-  async aaa () {
-    console.log(12)
-    const result = await this.testAsync()
-    console.log(result)
-    console.log(await api.getSystemInfo())
-  },
-  async getList () {
-    const params = {
-      showLoading: true,
-      method: 'POST',
-      data: {
-      }
-    }
-    const request = await http(api.index, params)
-    console.log(request)
-    const data = await request.data
-    console.log(data)
   }
 })
