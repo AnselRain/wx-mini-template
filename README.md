@@ -72,7 +72,7 @@ tap: util.debounce(async function(e) {
 ```
 ``` html
 // 父组件html
-<component-code class="" text='获取验证码' bindtap='sendCode' isSendCode='{{isSendCode}}'></component-code>
+<component-code class="sendCodeStyle" text='获取验证码' bindtap='sendCode' isSendCode='{{isSendCode}}' bindendTime='getEndTime'></component-code>
 ```
 ``` js
 // 父组件js
@@ -80,7 +80,7 @@ import util from '../../utils/util.js'
 Page({
 data: {
     isSendCode: false,
-    isStopTime: true
+    isTimeStop: true
   },
 sendCode: util.debounce(async function () {
     const that = this
