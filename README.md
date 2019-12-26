@@ -26,10 +26,10 @@ http(url, params)
 ```
 
 
-| 参数名 | 参数类型 | 参数值 |  
-| --- | --- | --- | 
-| url | string |  |  
-| params | object |  |  
+| 参数名 | 参数类型 | 参数值 |
+| --- | --- | --- |
+| url | string |  |
+| params | object |  |
 
 
 > params
