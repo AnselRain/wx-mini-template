@@ -1,11 +1,3 @@
-<!--
- * @Description: header
- * @Author: ALAN
- * @Github: https://github.com/AnselRain
- * @Date: 2019-12-11 17:23:00
- * @LastEditTime : 2019-12-25 16:13:12
- * @LastEditors  : ALAN
- -->
 # wx-mini-template
 
 > 推荐使用async与await
@@ -15,9 +7,10 @@
 > `token`请存入本地缓存中，`key`值为`token`
 
 ``` js
-    wx.setStorageSync('token', token)
+    wx.getStorageSync('token')
 ```
 
+## **工具类**
 ### request请求
 
 ``` js
@@ -33,10 +26,10 @@ http(url, params)
 ```
 
 
-| 参数名 | 参数类型 | 参数值 |
-| --- | --- | --- |
-| url | string |  |
-| params | object |  |
+| 参数名 | 参数类型 | 参数值 |  
+| --- | --- | --- | 
+| url | string |  |  
+| params | object |  |  
 
 
 > params
@@ -54,3 +47,71 @@ http(url, params)
 ```
 promise
 ```
+
+### 防抖函数
+``` js
+import util from '../../utils/util.js'
+
+tap: util.debounce(async function(e) {
+    console.log(e)
+})
+```
+
+## **公共组件**
+### 获取验证码倒计时组件
+
+> 组件名: `verificationCode`
+
+> 引入方式：
+
+``` js
+// 父组件json
+"usingComponents": {
+    "component-code": "/components/verificationCode/verificationCode"
+  }
+```
+``` html
+// 父组件html
+<component-code class="" text='获取验证码' bindtap='sendCode' isSendCode='{{isSendCode}}'></component-code>
+```
+``` js
+// 父组件js
+import util from '../../utils/util.js'
+Page({
+data: {
+    isSendCode: false,
+    isStopTime: true
+  },
+sendCode: util.debounce(async function () {
+    const that = this
+    // 判断是否允许点击
+    if (!that.data.isTimeStop) return
+    // 发送http请求
+    const params = {
+      data: {
+        isSend: true
+      }
+    }
+    const request = await http(api.post, params)
+    const data = request.data
+    // 判断是否成功，不成功就return
+    if (!JSON.parse(data).isSend) return
+    // 成功时给组件值isSendCode赋值true
+    await that.setData({
+      isSendCode: true
+    })
+    // 给isTimeStop赋值为false，防止倒计时结束前点击生效
+    that.data.isTimeStop = false
+  }, 500),
+  async getEndTime (e) {
+    // isEnd为倒计时结束时返回，成功返回true
+    this.data.isTimeStop = e.detail.isEnd
+  }
+```
+
+> 样式自定义
+
+通过添加 `class`实现
+
+
+

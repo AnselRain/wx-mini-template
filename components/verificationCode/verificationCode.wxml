@@ -1,0 +1,7 @@
+<!-- components/verificationCode/verificationCode.wxml -->
+<view class="">
+    <view class="code" wx:if="{{send}}" hover-class="none" hover-stop-propagation="false">
+        {{text}}
+    </view>
+    <view class="code" wx:if="{{alreadySend}}">{{second+"s"}}</view>
+</view>

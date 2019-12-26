@@ -3,7 +3,7 @@
   "plugins": [],
   "rules": {
     "function-url-quotes": "always",
-    "indentation": 2,
+    "indentation": 4,
     "number-leading-zero": null,
     "unit-no-unknown": null,
     "selector-type-no-unknown": null

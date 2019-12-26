@@ -57,8 +57,8 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "test",
-					"pathName": "pages/test/index",
+					"name": "示例",
+					"pathName": "pages/example/index",
 					"scene": null
 				}
 			]
