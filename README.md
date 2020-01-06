@@ -1,5 +1,7 @@
 # wx-mini-template
 
+> 微信小程序常用工具封装
+
 > 推荐使用async与await
 
 ### token
@@ -56,6 +58,18 @@ tap: util.debounce(async function(e) {
     console.log(e)
 })
 ```
+
+### `base64` 和 `String` 互相转换
+``` js
+import util from '../../utils/util.js'
+
+// String转base64
+util.stringToBase64(string)
+
+// base64转String
+util.base64ToString(base64)
+```
+
 
 ## **公共组件**
 ### 获取验证码倒计时组件

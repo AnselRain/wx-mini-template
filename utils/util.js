@@ -52,8 +52,28 @@ function debounce (fn, interval) {
   }
 }
 
+function stringToBase64 (str) {
+  const data = str || []
+  const arr = []
+  for (var i = 0, j = data.length; i < j; ++i) {
+    arr.push(str.charCodeAt(i))
+  }
+  const tmpUint8Array = new Uint8Array(arr)
+  const base64 = wx.arrayBufferToBase64(tmpUint8Array)
+  return base64
+}
+
+function base64ToString (base64) {
+  const base64Str = base64 || []
+  const arrayBuffer = wx.base64ToArrayBuffer(base64Str)
+  const str = String.fromCharCode.apply(null, new Uint8Array(arrayBuffer))
+  return str
+}
+
 module.exports = {
   formatTime: formatTime,
   throttle: throttle,
-  debounce: debounce
+  debounce: debounce,
+  stringToBase64: stringToBase64,
+  base64ToString: base64ToString
 }
